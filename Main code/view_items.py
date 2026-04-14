@@ -10,7 +10,7 @@ def view_items():
         print("There's no content in the txt.")
         return
 
-    print("\nInventory List:")
+    print("Inventory List:\n")
 
     count = 1
     for line in lines:
