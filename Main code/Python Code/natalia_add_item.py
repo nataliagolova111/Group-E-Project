@@ -29,5 +29,3 @@ def add_item():
             print("Invalid quantity. Please enter a positive whole number.")
 
     return name,quantity
-
-add_item()
