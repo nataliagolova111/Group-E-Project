@@ -17,7 +17,7 @@ def view_items():
         line = line.strip()
 
         if line != "":
-            parts = line.split()
+            parts = line.split(",")
             name = parts[0]
             quantity = parts[1]
 
