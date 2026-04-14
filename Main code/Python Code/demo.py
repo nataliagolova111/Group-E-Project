@@ -1,3 +1,5 @@
+from save_item_function import save_item
+
 def display_menu():
     print(f"{"=" * 10} Inventory Manager {"=" * 10}")
     print("1. Add an item to inventory")
