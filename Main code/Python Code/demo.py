@@ -13,7 +13,7 @@ def main():
         if choice == "1":
             pass
         elif choice == "2":
-            pass
+            save_item()
         elif choice == "3":
             pass
         else:
