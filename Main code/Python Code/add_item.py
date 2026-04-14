@@ -1,5 +1,5 @@
 def is_valid_name(name):
-    if name.strip() != "":
+    if name.strip() != "" and isinstance(name,str):
         return True
     else:
         return False
@@ -12,7 +12,7 @@ def is_valid_quantity(quantity):
     else:
         return True
 
-def add_item(name):
+def add_item():
     while True:
         name = input("Enter item name: ")
         if is_valid_name(name):
@@ -29,3 +29,5 @@ def add_item(name):
             print("Invalid quantity. Please enter a positive whole number.")
 
     return name,quantity
+
+add_item()
