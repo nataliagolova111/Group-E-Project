@@ -1,19 +1,19 @@
 def view_items():
     try:
         with open("items.txt", "r") as f:
-            lines = f.readlines()
+            line = f.readline()
     except:
-        print("The txt doesn't exit.")
+        print("The txt doesn't exist.")
         return
 
-    if len(lines) == 0:
+    if line == "":
         print("There's no content in the txt.")
         return
 
     print("Inventory List:\n")
 
     count = 1
-    for line in lines:
+    while line != "":
         line = line.strip()
 
         if line != "":
@@ -21,5 +21,8 @@ def view_items():
             name = parts[0]
             quantity = parts[1]
 
-            print(count, "-","Name : " ,name, "| Quantity : ", quantity)
+            print(count, "-", "Name:", name, "| Quantity:", quantity)
             count += 1
+
+        line = f.readline()
+        
