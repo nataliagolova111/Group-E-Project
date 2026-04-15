@@ -6,7 +6,7 @@ def view_items():
             if line == "":
                 print("There's no content in the txt.")
                 return
-
+            
             print("Inventory List:\n")
 
             count = 1
