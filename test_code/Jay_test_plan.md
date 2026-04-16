@@ -26,3 +26,4 @@ def save_item(item_name:str, item_quantity:int):
         return "SUCCESS" # For testing purposes only
     except FileNotFoundError:
         print("Failed to save item. Error: items.txt/inventory does not exist")
+        return "FAILURE" # For testing purposes only
