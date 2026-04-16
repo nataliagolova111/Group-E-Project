@@ -8,3 +8,6 @@ function 2 - save_item() saves info about item in a separate
 
 function 3 - view_items() prints a well organized table of
              all the items and their quantity.
+
+function 4 - update_quantity() asks user for the name of an item's
+             quantity he wants to change.
