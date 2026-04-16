@@ -77,7 +77,7 @@ def update_quantity():
     try:
         with open("items.txt", "r") as f:
             if f.read().strip() == "":
-                return # Go back to menu silently
+                return
     except FileNotFoundError:
         return
     
