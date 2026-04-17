@@ -1,3 +1,11 @@
+"""
+Module: demo.py
+Author: Group Project (Project Lead: Natalia, Core Developer: Anton, Testing & Quality Lead: Sullivan, Documentation Lead: Jay)
+Description:
+    1. A simple inventory management system for small businesses
+    2. Supports add item, record a quantity, view inventory items and their quantities, update quantities, and save inventory data to a text file for next time use
+    3. Provides a user-friendly menu for managing inventory
+"""
 def display_menu():
     print(f"\n{"=" * 10} Inventory Manager {"=" * 10}")
     print("1. Add an item to inventory")
@@ -38,11 +46,11 @@ def add_item():
 
     return name,quantity
 
-def save_item(item_name:str, item_quantity:int):
+def save_item(name, quantity):
     try:
         with open("items.txt", "a") as file:
-            file.write(f"{item_name},{item_quantity}\n")
-        print(f"\nSaved: {item_name} | Quantity: {item_quantity}")
+            file.write(f"{name},{quantity}\n")
+        print(f"\nSaved: {name} | Quantity: {quantity}")
     except FileNotFoundError:
         print("Failed to save item. Error: items.txt/inventory does not exist")
 
@@ -89,7 +97,7 @@ def update_quantity():
     
     with open("items.txt", "r") as f:
         for line in f:
-            name, qty = line.strip().split(",")
+            name, quantity = line.strip().split(",")
             if name.lower() == item_to_change.lower():
                 updated_items.append(f"{name},{new_quantity}\n")
                 found = True
