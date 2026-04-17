@@ -6,11 +6,10 @@ This program ....
 
 ## How to Run
 
-1. Open folder in VS Code
-2. Run demo.py
-3. ...
-4. ...
-5. ...
+1. Open Group-E-Project/Main code/Python Code folder in VS Code 
+2. Open demo.py file
+3. Run demo.py file
+4. Interact with the menu (use numbers 1-4 to navigate)
 
 ## Example input/output
 
