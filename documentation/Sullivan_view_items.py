@@ -9,7 +9,7 @@ def view_items():
         None
 
     Raises:
-        Exception: If the file cannot be opened or read.
+        FileNotFoundError: If the file cannot be opened or read.
 
     Example:
         >>> view_items()
@@ -22,7 +22,7 @@ def view_items():
         with open("items.txt", "r") as f:
             line = f.readline()
 
-            if line == "":
+            if line == "":         # Check if file is empty
                 print("There's no content in the txt.")
                 return
             
@@ -30,10 +30,10 @@ def view_items():
 
             count = 1
             while line != "":
-                line = line.strip()
+                line = line.strip()    # Remove newline
 
-                if line != "":
-                    parts = line.split(",")
+                if line != "":    # check if the line is empty
+                    parts = line.split(",")     # Split format into name and quantity as list
                     name = parts[0]
                     quantity = parts[1]
 
@@ -41,5 +41,5 @@ def view_items():
                     count += 1
 
                 line = f.readline()
-    except:
-        print("The txt doesn't exist.")
+    except FileNotFoundError:
+        print("The txt doesn't exist.")      # Handle when file does not exist or cannot be read
