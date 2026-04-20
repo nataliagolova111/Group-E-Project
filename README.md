@@ -16,11 +16,14 @@ This program is a simple Inventory Manager made by Python. It allows user to add
 - Input: 1 → Apple → 50
 - Output: Saved: Apple | Quantity: 10
 
-- Input: 
+- Input: 2
 - Output: 
+Inventory List:
+
+1 - Name: Apple | Quantity: 50
 
 - Input: 3 → Apple → 100
 - Output: Quantity updated successfully!
 
-- Input: 
-- Output:
+- Input: 5
+- Output: Invalid choice. Try again.
