@@ -1,7 +1,7 @@
 # Testing Plan
 
 ## Overview
-**Functions tested:**  view_items() , save_item(item_name, item_quantity) , is_valid_name(name)
+**Functions tested:**  view_items() , save_item(item_name, item_quantity) , is_valid_name(name) , update_quantity(item_to_change:str, new_quantity:int)
 **Testing types:** Unit
 **Date:**  04/16/2026
 
