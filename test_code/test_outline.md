@@ -6,7 +6,7 @@ REMINDER : you should have at least one case (Normal, Edge, or Error)
 - Function: update_quantity
 
 ## Natalia
-- Function: add_item
+- Function: is_valid_name(name)
 
 ## Jay
 - Function: save_item
