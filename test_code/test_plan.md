@@ -9,13 +9,15 @@
 
 ## Test Case Table
 
-| Test ID | Description | Input | Expected Output | Type | Pass/Fail | Notes |
+| Test ID | Description | Input(s) | Expected Output | Type | Pass/Fail | Notes |
+|---------|-------------|----------|-----------------|------|-----------|-------|
 |T1|Saving a normal valid item|item_name="Apple", item_quantity=10|"SUCCESS"|Normal|Pass|Basic successful save in items.txt|
 |T2|Quantity given as string|item_name="Orange", item_quantity=Two|TypeError|Error|Fail|This currently crashes as code does not yet handle the error case|
 |T3|Valid item name|"Pen"|True|Normal|Pass||
 |T4|Blank string input|""|False|Error|Pass||
 |T5|Viewing item from a normal file|"Apple,10"|True|Normal|Uses assertTrue to confirm|
 |T6|Test if a file is empty|("Coke", "5")|None|Edge|Pass|The test passes because when the file is empty, the try block returns None and goes back to the main menu|
+
 ---
 
 ## Code Used for Testing
