@@ -294,5 +294,3 @@ def main():
             print("Invalid choice. Try again.")
 
 main()
-
-main()
