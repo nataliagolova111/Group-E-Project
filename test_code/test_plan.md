@@ -16,7 +16,7 @@
 |T3|Valid item name|"Pen"|True|Normal|Pass||
 |T4|Blank string input|""|False|Error|Pass||
 |T5|Viewing item from a normal file|"Apple,10"|True|Normal|Uses assertTrue to confirm|
-|T6|Test if a file is empty|("Coke", "5")|None|Edge|Pass|The test passes because when the file is empty, the try block returns None and goes back to the main menu|
+|T6|Change the quantity of an existing item|("Apple", "5")|True|Normal|Pass||
 
 ---
 
@@ -70,8 +70,7 @@ def update_quantity(item_to_change:str, new_quantity:int):
     try:
         with open("Anton_test_items.txt", "r") as f:
             if f.read().strip() == "":
-                return None # only for testing purposes, but there is actually None
-                            # even without typing it
+                return
     except FileNotFoundError:
         return
     
@@ -90,6 +89,7 @@ def update_quantity(item_to_change:str, new_quantity:int):
                 found = True
             else:
                 updated_items.append(line)
+                return found # only for testing purposes
                     
     if found:
         with open("Anton_test_items.txt", "w") as f:
