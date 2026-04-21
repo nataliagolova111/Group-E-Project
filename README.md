@@ -13,15 +13,15 @@ This program is a simple Inventory Manager made by Python. It allows user to add
 
 ## Example input/output
 
-- Input: 1 → Apple → 50
-- Output: Saved: Apple | Quantity: 10
+- Input #1: 1 → Apple → 50
+- Output #1: Saved: Apple | Quantity: 10
 
-- Input: 2
-- Output: Inventory List:
+- Input #2: 2
+- Output #2: Inventory List:
           1 - Name: Apple | Quantity: 50
 
-- Input: 3 → Apple → 100
-- Output: Quantity updated successfully!
+- Input #3: 3 → Apple → 100
+- Output #3: Quantity updated successfully!
 
-- Input: 5
-- Output: Invalid choice. Try again.
+- Input #4: 5
+- Output #4: Invalid choice. Try again.
