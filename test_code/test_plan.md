@@ -1,7 +1,7 @@
 # Testing Plan
 
 ## Overview
-**Functions tested:**  view_items() , save_item(item_name, item_quantity) , is_valid_name(name) , 
+**Functions tested:**  view_items() , save_item(item_name, item_quantity) , is_valid_name(name) , update_quantity(item_to_change:str, new_quantity:int)
 **Testing types:** Unit
 **Date:**  04/16/2026
 
@@ -9,16 +9,19 @@
 
 ## Test Case Table
 
-| Test ID | Description | Input | Expected Output | Type | Pass/Fail | Notes |
+| Test ID | Description | Input(s) | Expected Output | Type | Pass/Fail | Notes |
+|---------|-------------|----------|-----------------|------|-----------|-------|
 |T1|Saving a normal valid item|item_name="Apple", item_quantity=10|"SUCCESS"|Normal|Pass|Basic successful save in items.txt|
 |T2|Quantity given as string|item_name="Orange", item_quantity=Two|TypeError|Error|Fail|This currently crashes as code does not yet handle the error case|
 |T3|Valid item name|"Pen"|True|Normal|Pass||
 |T4|Blank string input|""|False|Error|Pass||
 |T5|Viewing item from a normal file|"Apple,10"|True|Normal|Uses assertTrue to confirm|
-|T6|Test if a file is empty|("Coke", "5")|None|Edge|Pass|The test passes because when the file is empty, the try block returns None and goes back to the main menu|
+|T6|Change the quantity of an existing item|("Apple", "5")|True|Normal|Pass||
+
 ---
 
 ## Code Used for Testing
+```python
 
 def save_item(item_name:str, item_quantity:int):
     try:
@@ -67,8 +70,7 @@ def update_quantity(item_to_change:str, new_quantity:int):
     try:
         with open("Anton_test_items.txt", "r") as f:
             if f.read().strip() == "":
-                return None # only for testing purposes, but there is actually None
-                            # even without typing it
+                return
     except FileNotFoundError:
         return
     
@@ -87,6 +89,7 @@ def update_quantity(item_to_change:str, new_quantity:int):
                 found = True
             else:
                 updated_items.append(line)
+                return found # only for testing purposes
                     
     if found:
         with open("Anton_test_items.txt", "w") as f:

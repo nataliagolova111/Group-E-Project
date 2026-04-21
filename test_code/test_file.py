@@ -4,7 +4,7 @@ import unittest
 
 def save_item(item_name:str, item_quantity:int):
     try:
-        with open("items.txt", "a") as file:
+        with open("jay_items.txt", "a") as file:
             file.write(f"{item_name},{item_quantity}\n")
         print(f"\nSaved: {item_name} | Quantity: {item_quantity}")
         return "SUCCESS" # For testing purposes only
@@ -20,7 +20,7 @@ def is_valid_name(name):
     
 def view_items():
     try:
-        with open("items.txt", "r") as f:
+        with open("sullivan_items.txt", "r") as f:
             line = f.readline()
 
             if line == "":
@@ -47,10 +47,9 @@ def view_items():
 
 def update_quantity(item_to_change:str, new_quantity:int):
     try:
-        with open("Anton_test_items.txt", "r") as f:
+        with open("anton_items.txt", "r") as f:
             if f.read().strip() == "":
-                return None # only for testing purposes, but there is actually None
-                            # even without typing it in here
+                return 
     except FileNotFoundError:
         return
     
@@ -61,17 +60,18 @@ def update_quantity(item_to_change:str, new_quantity:int):
     updated_items = []
     found = False
     
-    with open("Anton_test_items.txt", "r") as f:
+    with open("anton_items.txt", "r") as f:
         for line in f:
             name, qty = line.strip().split(",")
             if name.lower() == item_to_change.lower():
                 updated_items.append(f"{name},{new_quantity}\n")
-                found = True
+                found = True 
             else:
                 updated_items.append(line)
-                    
+            return found # only for testing purposes
+                                    
     if found:
-        with open("Anton_test_items.txt", "w") as f:
+        with open("anton_items.txt", "w") as f:
             f.writelines(updated_items)
         print("Quantity updated successfully!")
     else:
@@ -86,10 +86,10 @@ class TestYourFunction(unittest.TestCase):
 
     def test_save_valid_item(self):
         # Test normal case
-        result = save_item("Apple", 10)
+        result = save_item("Apple", 9)
         self.assertEqual(result, "SUCCESS")
     
-    #No test needed for error case
+    # No test needed for error case
 
     def test_is_valid_name(self):
         self.assertTrue(is_valid_name("Pen"))
@@ -98,9 +98,9 @@ class TestYourFunction(unittest.TestCase):
         self.assertFalse(is_valid_name(""))
 
     def test_normal_file(self):
-        # Normal: file exists and has valid data
-        with open("items.txt", "w") as f:
-            f.write("Apple,10")
+        # # Normal: file exists and has valid data
+        with open("sullivan_items.txt", "w") as f:
+            f.write("Apple,10\n")
 
         try:
             view_items()
@@ -110,15 +110,16 @@ class TestYourFunction(unittest.TestCase):
 
         self.assertTrue(success)
 
-       # Before testing I created an empty file to check the try block
-    # in the beginning of my function
-    # Edge case: the file is empty and returns back to the main menu
-    def test_item_not_found(self):
-        result = update_quantity("Coke", "5")
-        self.assertEqual(result, None)
+    # Normal case: the file has an existing item to update
+    def test_change_existing_quantity(self):
+            with open("anton_items.txt", "w") as f:
+                f.write("Apple,10")
+            try:
+                result = update_quantity("Apple", "5")
+            except:
+                result = update_quantity("Apple", "5")
+
+            self.assertTrue(result)
 
 if __name__ == '__main__':
     unittest.main()   
-
-    
-

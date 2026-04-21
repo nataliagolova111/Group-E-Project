@@ -17,10 +17,8 @@ This program is a simple Inventory Manager made by Python. It allows user to add
 - Output: Saved: Apple | Quantity: 10
 
 - Input: 2
-- Output: 
-Inventory List:
-
-1 - Name: Apple | Quantity: 50
+- Output: Inventory List:
+          1 - Name: Apple | Quantity: 50
 
 - Input: 3 → Apple → 100
 - Output: Quantity updated successfully!
