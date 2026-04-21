@@ -6,7 +6,7 @@ This program is a simple Inventory Manager made by Python. It allows user to add
 
 ## How to Run
 
-1. Open Group-E-Project/Main code/Python Code folder in VS Code 
+1. Open Group-E-Project/Main code folder in VS Code 
 2. Open demo.py file
 3. Run demo.py file
 4. Interact with the menu (use numbers 1-4 to navigate)
@@ -18,7 +18,7 @@ This program is a simple Inventory Manager made by Python. It allows user to add
 
 - Input #2: 2
 - Output #2: Inventory List:
-          1 - Name: Apple | Quantity: 50
+             1 - Name: Apple | Quantity: 50
 
 - Input #3: 3 → Apple → 100
 - Output #3: Quantity updated successfully!
